@@ -28,6 +28,12 @@ class HolaMundo : public Window {
         HolaMundo();
         ~HolaMundo();
 
+        void click_salir();
+        void click_mensaje();
+        
+        VBox cajaV;
+        HButtonBox botonera;
         Label etiqueta;
+        Button *botonSalir, *botonMensaje;
 };
 #endif
