@@ -15,10 +15,11 @@
  *
  * =====================================================================================
  */
+#include <stdlib.h>
 #include <iostream>
 #include <string> /*Cadena de caracteres */
 #include <vector>
-#include <ifstream>
+#include <fstream>
 
 using namespace std;
 
@@ -36,10 +37,10 @@ int main(){
     inicializar();
     mostrar();
 
-    while( vidas>0 && plabra_mostrar != palabra_original ){
+    while( vidas>0 && palabra_mostrar != palabra_original ){
         char x;
         cin>>x;
-        System("clear");
+        system("clear");
         ingresar(x);
         mostrar();
     }
@@ -78,7 +79,7 @@ void inicializar(){
 void ingresar(char x){
     bool perdiVidas = true;
 
-    for(int =0; i<palabra_original.length(); i++){
+    for(int i=0; i<palabra_original.length(); i++){
         if(x==palabra_original[i]){
             perdiVidas = false;
             palabra_mostrar[i]=x;
@@ -89,7 +90,25 @@ void ingresar(char x){
 }
 
 vector<string> obtener_coleccion_de_palabras(){
-    vector<string> palabras:
-
+    vector<string> palabras;
+    ifstream file_input_stream("palabras.txt");
+    
+    string palabra;
+    while(file_input_stream>>palabra)
+        palabras.push_back(palabra);
+    file_input_stream.close();
     return palabras;
+}
+
+/*  Retorna un numero aleatoriomenor que 'b' */
+int obtener_numero_aleatorio_entre(int b){
+    srand(time(0));
+    int numero_aleatorio = rand();
+    return numero_aleatorio % b;
+}
+
+string obtener_palabra_aleatoria(){
+    vector<string> palabras = obtener_coleccion_de_palabras();
+    int numero_aleatorio = obtener_numero_aleatorio_entre(palabras.size());
+    return palabras[numero_aleatorio];
 }
