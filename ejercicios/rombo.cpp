@@ -27,11 +27,21 @@ int main(){
     cout << "  *** " << endl;
     cout << "   * " << endl;
     
-    for(int i = 20; i > 0 ; i--){
-        
-        cout << "*";
+    for(int i = 0; i <= 13 ; i++){
+       
+        if (i == 0) {
+            cout << "   *"   << endl;
+        }
+
+        if (i > 0) {
+            cout << "  *"; 
+
+            if(i >1 && i <= 5){
+                cout << "*";
+            }
+        }
+
     }
     
     return 0;
 }
-

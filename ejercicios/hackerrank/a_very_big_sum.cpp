@@ -26,8 +26,6 @@
 
 using namespace std;
 
-using namespace std;
-
 long aVeryBigSum(int n, vector <long> ar) {
     // Complete this function
     long int result = 0;
