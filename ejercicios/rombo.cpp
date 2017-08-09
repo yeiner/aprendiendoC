@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
+ *         Author:  Yeiner Morales (@yeiner_morales), 
  *   Organization:  
  *
  * =====================================================================================
@@ -27,7 +27,7 @@ int main(){
     cout << "  *** " << endl;
     cout << "   * " << endl;
     
-    for(int i = 13; i > 0 ; i--){
+    for(int i = 20; i > 0 ; i--){
         
         cout << "*";
     }
