@@ -18,31 +18,30 @@
 #include <iostream>
 
 using namespace std;
-int n, N = 0;
+int n;
 
 int fibonacci(int n ){
     
     int result = 0;
-    int ultimn = n;
-    if (n < 2 ) {
-      return  result = n;
+    if ( n < 2 ) {
+       result = n;
     } else {
-        return result = (ultimn-1) + (n-2);
+       result = fibonacci(n-1) + fibonacci(n-2);
     }
     
+    return result;
 }
 
 int main(){
-    
+   
     cout << "Digita tamaño serie" << endl ;
-    cin >> n ;;
+    cin >> n ;
 
     for(int i = 0; i <= n; i++){
-        cout << fibonacci(i) << ' ';
-
+        cout <<  fibonacci( i ) << ' ';
     }
-
-
+    
+    cout << endl;
     return 0;
 }
 
