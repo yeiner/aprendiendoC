@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  bubble_sort.cpp
+ *       Filename:  selection_sort.cpp
  *
- *    Description: Ordenamiento Burbuja 
+ *    Description:  Ordenamiento por selección.
  *
  *        Version:  1.0
- *        Created:  14/09/17 10:18:12
+ *        Created:  14/09/17 14:47:37
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -20,29 +20,31 @@
 
 using namespace std;
 
-vector<int> bubbleSort(vector<int> v ){
-    
+vector<int> selectionSort( vector<int> v ){
     int aux; 
-
-    for (int z = 1; z < v.size(); z++ ){
-
-        for( int i=0; i < (v.size() -z); i++ ){
-
-            if( v[i] > v[i+1] ){
-
-                aux    = v[i];
-                v[i]   = v[i+1];
-                v[i+1] = aux;
-            }
+    for(int i = 0; i < (v.size() - 1 ); i++ ){
         
+        for(int j = i + 1; j < v.size(); j++){
+            
+            if( v[i] > v[j] ) {
+                
+                aux  = v[i];
+                v[i] = v[j];
+                v[j] = aux;
+                
+            }
+
         }
+
     }
 
     return v;
+
 }
 
 int main(){
-
+    
+    
     vector<int> vector_inicial;
     vector<int> vector_ordenado;
     
@@ -68,16 +70,16 @@ int main(){
     
     cout << endl;
 
-    vector_ordenado = bubbleSort( vector_inicial );
-    
-    cout << "Ordenado" << endl; 
+    vector_ordenado = selectionSort( vector_inicial );
 
-    for( int j = 0; j < vector_ordenado.size(); j++ ){
-        cout << " " << vector_ordenado[j];
+    cout << "Ordenado " << endl;
+        
+    for(int k = 0; k < vector_ordenado.size(); k++){
+        
+        cout << " " << vector_ordenado[k];
     }
-    
-    cout << endl;
-   
-    return 0;
 
+    cout << endl;
+    return 0;
 }
+
