@@ -28,11 +28,9 @@ void ordenar(int& menor, int& mayor){
 
 bool es_primo(int x){
     unsigned i = 2;
-
     while(( i <= x/2 ) && ( x% i != 0 )){
         i++;
     }
-
     return (i == x/2+1);
 }
 
@@ -44,16 +42,13 @@ void primos(int min, int max){
             cout << i << " ";
         }
     }
-
     cout << "\n" ;
 }
 
 int main() {
-
-    int min, max;
+int min, max;
     cout << "Introduzca el Rango de Valores \n";
     cin >> min >> max;
     ordenar(min, max);
     primos(min, max);
-
 }
