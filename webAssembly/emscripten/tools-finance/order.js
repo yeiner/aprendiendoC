@@ -1982,6 +1982,9 @@ var ___wasm_call_ctors = Module["___wasm_call_ctors"] = createExportWrapper("__w
 var _valor_cuota = Module["_valor_cuota"] = createExportWrapper("valor_cuota");
 
 /** @type {function(...*):?} */
+var _valor_interes = Module["_valor_interes"] = createExportWrapper("valor_interes");
+
+/** @type {function(...*):?} */
 var ___errno_location = Module["___errno_location"] = createExportWrapper("__errno_location");
 
 /** @type {function(...*):?} */

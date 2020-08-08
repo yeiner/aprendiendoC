@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Calcular crédito</title>
     <script src="script.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"
 </head>
 <body>
    <span>Valor capital</span>
@@ -15,26 +17,10 @@
    <input type="button" id="btn-calculate" onclick="getResult()" value="Calcular cuota">
    <span>Cuota</span>
    <input type="text" id="cuota-mensual">
-   <div id="cuotas"></div>
-   <script>
-        function getResult(){
-            let result = 0;
-            capital = parseFloat(document.querySelector('#capital').value);
-            tasa  = parseFloat(document.querySelector('#tasa').value);
-            plazo = parseFloat(document.querySelector('#plazo').value);
-            result = wasmExports.valor_cuota(tasa, capital, plazo);
-            document.getElementById("cuota-mensual").value = Math.round(result);
-            console.log("plazo", parseInt(plazo));
-            let list = "<div>";
-            for(var i=0; i<parseInt(plazo); i++){
-                list +=  "<li>" + Math.round(result) + "</li>";
-            }
-
-            list += "</div>";
-
-            document.getElementById("cuotas").innerHTML = list;
-
-        }
-   </script>
+   <span>Interes</span>
+   <input type="text" id="valor-interes">
+   <div>
+     <table id="valor-cuota"></table>
+   </div>
 </body>
 </html>

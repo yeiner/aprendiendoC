@@ -23,3 +23,7 @@ float valor_cuota(float interest, float capital, float term){
     return capital * interest / (100 * (1 - pow((1 + interest / 100), - term)));
 }
 
+EMSCRIPTEN_KEEPALIVE
+float valor_interes(float saldo, float tasa, float plazo){
+    return saldo * tasa / 100;
+}
