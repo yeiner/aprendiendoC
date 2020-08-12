@@ -15,15 +15,21 @@
  *
  * =====================================================================================
  */
-#include <emscripten.h>
+#include <emscripten/bind.h>
+#include <emscripten/val.h>
 #include <math.h>
 
-EMSCRIPTEN_KEEPALIVE 
-float valor_cuota(float interest, float capital, float term){
-    return capital * interest / (100 * (1 - pow((1 + interest / 100), - term)));
+using namespace emscripten;
+
+float valor_cuota(float capital, float tasa, float plazo){
+    return capital * tasa / (100 * (1 - pow((1 + tasa / 100), - plazo)));
 }
 
-EMSCRIPTEN_KEEPALIVE
 float valor_interes(float saldo, float tasa, float plazo){
     return saldo * tasa / 100;
+}
+
+EMSCRIPTEN_BINDINGS(my_module) {
+    function("valor_cuota", &valor_cuota);
+    function("valor_interes", &valor_interes);
 }
